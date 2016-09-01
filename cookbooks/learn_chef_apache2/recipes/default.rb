@@ -3,6 +3,12 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
+file '/home/skytap/.vimrc' do
+	content ' set number 
+set shiftwidth=4 
+set tabstop=4 
+set hlsearch '
+end
 
 root_dbpswd=""
 
@@ -45,8 +51,8 @@ service 'apache2' do
 	action :start
 end
 
-include_recipe 'learn_chef_apache2::database'
-default['learn_chef_apache2']['database']['dbname'] = 'AARdb'
-default['learn_chef_apache2']['database']['host']   = '127.0.0.1'
-default['learn_chef_apache2']['database']['root_username'] = 'aarapp'
-default['learn_chef_apache2']['database']['root_password'] = ''
+#include_recipe 'learn_chef_apache2::database'
+#default['learn_chef_apache2']['database']['dbname'] = 'AARdb'
+#default['learn_chef_apache2']['database']['host']   = '127.0.0.1'
+#default['learn_chef_apache2']['database']['root_username'] = 'aarapp'
+#default['learn_chef_apache2']['database']['root_password'] = ''
