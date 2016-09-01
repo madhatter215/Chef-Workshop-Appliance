@@ -44,3 +44,9 @@ end
 service 'apache2' do
 	action :start
 end
+
+include_recipe 'learn_chef_apache2::database'
+default['learn_chef_apache2']['database']['dbname'] = 'AARdb'
+default['learn_chef_apache2']['database']['host']   = '127.0.0.1'
+default['learn_chef_apache2']['database']['root_username'] = 'aarapp'
+default['learn_chef_apache2']['database']['root_password'] = ''
